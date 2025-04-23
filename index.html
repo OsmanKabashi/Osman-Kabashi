@@ -1,143 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Osman Kabashi</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktinformationen</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            display: flex;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            background-color: #1a73e8;
+            color: white;
+            padding: 40px;
+            width: 40%;
+        }
+
+        .contact-info h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            margin-top: 60px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .contact-form {
+            width: 60%;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .required {
+            color: red;
+            margin-left: 3px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #1a73e8;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1557b0;
+        }
+
+        .success-message, .error-message {
+            display: none;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            .contact-info, .contact-form {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-
-
-
-  <div id="fullpage">
-
-
-    <div class="section" data-anchor="skills">
-      <div class="content">
-        <h1 style="color: #80C4E9; font-size: 70px;" class="wow fadeInDown" data-wow-delay="0.2s">Osman Kabashi</h1>
-        <p style="color: #FFF6E9;" class="wow fadeInDown" data-wow-delay="0.2s">Hi, I'm Osman Kabashi an 18 year old student with a passion for technology and mostly programming. Now I'm viewing 2 universities and also I follow a course called Innovation Academy to develop further skills in programming!</p>
-
-        <div class=" wow fadeInUp container-skillbar" data-wow-delay="0.2s">
-          <div class="skillbar clearfix " data-percent="90%">
-            <div class="skillbar-title" style="background: #DD1E2F;"><span>HTML5</span></div>
-            <div class="skillbar-bar" style="background: #DD1E2F;"></div>
-            <div style="color: #4335A7; font-weight: 900;" class="skill-bar-percent">90%</div>
-          </div> 
-
-          <div class="skillbar clearfix " data-percent="80%">
-            <div class="skillbar-title" style="background: #EBB035;"><span>CSS3</span></div>
-            <div class="skillbar-bar" style="background: #EBB035;"></div>
-            <div style="color: #4335A7; font-weight: 900;" class="skill-bar-percent">80%</div>
-          </div>
-
-          <div class="skillbar clearfix " data-percent="75%">
-            <div class="skillbar-title" style="background: #218559;"><span>Javascript</span></div>
-            <div class="skillbar-bar" style="background: #218559;"></div>
-            <div style="color: #4335A7; font-weight: 900;" class="skill-bar-percent">75%</div>
-          </div> 
-
-          <div class="skillbar clearfix " data-percent="45%">
-            <div class="skillbar-title" style="background: #6840D4;"><span>Wordpress</span></div>
-            <div class="skillbar-bar" style="background: #6840D4;"></div>
-            <div style="color: #4335A7; font-weight: 900;" class="skill-bar-percent">65%</div>
-          </div>
-
-          <div class="skillbar clearfix " data-percent="30%">
-            <div class="skillbar-title" style="background: #06A2CB;"><span>ReactJs</span></div>
-            <div class="skillbar-bar" style="background: #06A2CB;"></div>
-            <div style="color: #4335A7; font-weight: 900;" class="skill-bar-percent">60%</div>
-          </div> 
-
-          <div class="skillbar clearfix " data-percent="20%">
-            <div class="skillbar-title" style="background: #AB4DD2;"><span>Figma</span></div>
-            <div class="skillbar-bar" style="background: #AB4DD2;"></div>
-            <div style="color: #4335A7; font-weight: 900;" class="skill-bar-percent">75%</div>
-          </div> 
+    <div class="contact-container">
+        <div class="contact-info">
+            <h1>Kontaktinformationen</h1>
+            <p>Mell erstellt hochwertige, verlinkbare Inhalte und baut mindestens 40 hochwertige Backlinks auf.</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i>📞</i>
+                    <span>+491738880550</span>
+                </div>
+                <div class="contact-item">
+                    <i>📱</i>
+                    <span>+491738880550</span>
+                </div>
+                <div class="contact-item">
+                    <i>📍</i>
+                    <span>Siemensstaße 5, DE-30916 Isernhagen</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    
 
- 
-
-    <div class="section" data-anchor="projects">
-      <div class="content-slide">
-        <div class="slide">
-          <h1 class="wow fadeInDown" data-wow-delay="0.2s">Doppio Cafe Bar Lounge</h1>
-          <p style="color: #FFF6E9;" class="wow fadeInDown" data-wow-delay="0.2s">A website I made for a company that wanted to let people know about the services that they provide.
-            The page was made with HTML, CSS AND JS.
-            It is fully responsive and attractive for users!
-          </p>
-          <img class="wow fadeInUp" data-wow-delay="0.2s" src="received_1062276898451800.jpeg">
-        </div>
-        <div class="slide">
-          <h1>Car Wash Company</h1>
-          <p style="color: #FFF6E9;">A project I'm working on right now is a car wash website which I'm developing as a private project and it's coming soon!</p>
-          <img src="https://media.istockphoto.com/id/1310978724/photo/the-washing-process-on-a-self-service-car-wash.webp?a=1&b=1&s=612x612&w=0&k=20&c=VX4jusQzIOSwRuVxOzFCA0Lh-ZA1ukGv5SgdHzYZrBQ=">
-        </div>
-        
-      </div>
-    </div>
-
-
-    <div class="section" data-anchor="contact">
-      <div class="content wow fadeInDown" data-wow-delay="0.2s">
-        <h1 style="color: #06A2CB;">CONTACT ME</h1>
-        <p style="color: #FFF6E9;">Whether you're interested in working with me or just want to say hello, I'd love to hear from you!</p>
-        <br>
         <div class="contact-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Vollständiger Name<span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-          <div id="form-messages"></div>
-          <form id="ajax-contact" method="post" role="form" action="contact.php" data-toggle="validator">
-            <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="0.6s">
-              <input type="text" class="form-control" id="name" name="name" placeholder="NAME" data-error="Field can't be blank!" required>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
-            </div>
+                <div class="form-group">
+                    <label for="email">E-Mail<span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-            <div class="form-group has-feedback wow fadeInRight" data-wow-delay="0.8s">
-              <input type="email" class="form-control" id="email" name="email" placeholder="EMAIL" data-error="Field can't be blank!" required>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
-            </div>
+                <div class="form-group">
+                    <label for="message">Kommentar oder Nachricht<span class="required">*</span></label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
 
-            <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="1s">
-              <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="MESSAGE" data-error="Minimum of 10 characters" required></textarea>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
-            </div>
+                <button type="submit">Submit</button>
+            </form>
 
-            <div class="hidden">
-              <input type="text" class="form-control" id="human" name="human" placeholder="">
+            <div id="success-message" class="success-message">
+                Ihre Nachricht wurde erfolgreich gesendet!
             </div>
-            <div class="wow fadeInUp" data-wow-delay="1s">
-              <button type="submit" id="submit" name="submit" class="btn btn-lg">SEND MESSAGE</button>
+            <div id="error-message" class="error-message">
+                Es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es erneut.
             </div>
-          </form>
-          <br>
         </div>
-      </div>
     </div>
 
+    <script>
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
 
-    <div id="education" class="section fp-auto-height">
-      <div class="footer">
-        <p>ABOUT MY EDUCATION</p>
-        <div class="social-links">
-          <a target="_blank" href="https://www.umib.net/"><h3>UMIB - University of Mitrovica "Isa Boletini"</h3></a>
-          <a target="_blank" href="https://www.ibcmitrovica.eu/"><h3>IBCM - International Bussiness Collage of Mitrovica</h3></a>
-          <a target="_blank" href="https://innovationacademy-ks.com/"><h3>Innovation Acadamy</h3></a>
-        </div>
-      </div>
-    </div>
+            const form = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
 
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
 
-  </div>
+                // Hide any previous messages
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
 
+                // Send the email using EmailJS
+                emailjs.sendForm(
+                    'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+                    'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+                    form
+                ).then(function() {
+                    successMessage.style.display = 'block';
+                    form.reset();
+                }, function(error) {
+                    console.error('Error:', error);
+                    errorMessage.style.display = 'block';
+                });
+            });
+        })();
+    </script>
 </body>
-</html>
+</html> 
